@@ -1,4 +1,8 @@
 # BIND ad blocker
+## Fork details
+This fork adds docker support
+
+## Overview 
 
 Fetch various blocklists and generate a BIND zone from them.
 
