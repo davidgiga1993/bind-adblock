@@ -50,7 +50,7 @@ config = {
 }
 
 parent_dir = os.path.dirname(os.path.realpath(__file__))
-main_conf_file = os.path.join(parent_dir, 'config.yml')
+main_conf_file = os.path.join(parent_dir, 'config', 'config.yml')
 config = yaml.safe_load(open(main_conf_file))
 config['cache'] = Path(config['cache'])
 if not config['cache'].is_absolute():

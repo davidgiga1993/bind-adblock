@@ -21,6 +21,7 @@ Uses the following sources:
 * [Polish CERT Phishing list](https://www.cert.pl/ostrzezenia_phishing/)
 
 ## Setup
+Manual setup steps
 
 ### Python packages
 
@@ -85,3 +86,11 @@ Example: `update-zonefile.py /etc/bind/db.rpz.example.com rpz.example.com`
 
 You can either use an additional zone to whitelist domains (Or add them to `config.yml`) 
 See [Whitelist](https://github.com/Trellmor/bind-adblock/wiki/whitelist) for adding a whitelist zone.
+
+
+## Docker image
+In this example the `config.yml` is located in `/etc/bind/adbloc/config.yml`.
+Running inside a docker container implies that no auto-reload of the zonefile is possible.
+```
+docker run -it --rm -v /etc/bind/adblock:/out -v /etc/bind/adblock:/app/config bind-adblock:latest --no-bind /out/db.adblock adblock
+```
